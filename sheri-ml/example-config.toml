@@ -1,0 +1,116 @@
+# Sheri ML Configuration Example
+# Copy to ~/.codex/config.toml (or ~/.sheri-ml/config.toml after rebrand)
+
+# Default provider and model
+model_provider = "gemini"
+model = "gemini-3.1-flash"
+
+# ====================================
+# Model Providers Configuration
+# ====================================
+
+[model_providers.openai]
+name = "OpenAI"
+base_url = "https://api.openai.com/v1"
+wire_api = "responses"
+requires_openai_auth = true
+supports_websockets = true
+
+[model_providers.gemini]
+name = "Google Gemini"
+base_url = "https://generativelanguage.googleapis.com/v1"
+env_key = "GEMINI_API_KEY"
+env_key_instructions = """
+Get your Gemini API key at: https://makersuite.google.com/app/apikey
+Set it with: export GEMINI_API_KEY=your_key_here
+"""
+wire_api = "responses"
+request_max_retries = 5
+stream_max_retries = 3
+
+[model_providers.anthropic]
+name = "Anthropic Claude"
+base_url = "https://api.anthropic.com/v1"
+env_key = "ANTHROPIC_API_KEY"
+env_key_instructions = """
+Get your Claude API key at: https://console.anthropic.com/
+Set it with: export ANTHROPIC_API_KEY=your_key_here
+"""
+wire_api = "responses"
+
+[model_providers.cheri_ml]
+name = "Cheri ML"
+base_url = "http://localhost:8080/v1"
+env_key = "CHERI_ML_API_KEY"
+env_key_instructions = """
+Custom Cheri ML model endpoint
+Set your API key with: export CHERI_ML_API_KEY=your_key_here
+"""
+wire_api = "responses"
+request_max_retries = 3
+
+[model_providers.ollama]
+name = "Ollama (Local)"
+base_url = "http://localhost:11434/v1"
+wire_api = "responses"
+
+[model_providers.lmstudio]
+name = "LM Studio (Local)"
+base_url = "http://localhost:1234/v1"
+wire_api = "responses"
+
+# ====================================
+# Agent & CTO Configuration (Future)
+# ====================================
+
+# [cto]
+# max_agents = 5
+# build_monitoring = true
+# auto_fix_builds = true
+# github_integration = true
+#
+# [[cto.agent_roles]]
+# name = "code-generator"
+# provider = "gemini"
+# model = "gemini-3.1-pro"
+# priority = "high"
+#
+# [[cto.agent_roles]]
+# name = "code-reviewer"
+# provider = "anthropic"
+# model = "claude-opus-4.6"
+# priority = "high"
+#
+# [[cto.agent_roles]]
+# name = "quick-checks"
+# provider = "ollama"
+# model = "codellama"
+# priority = "medium"
+
+# ====================================
+# Sandbox & Security
+# ====================================
+
+sandbox_mode = "workspace-write"
+ask_for_approval = "on-request"
+
+# ====================================
+# Features
+# ====================================
+
+[features]
+web_search = false
+multi_agent = false  # Coming soon
+cto_mode = false     # Coming soon
+
+# ====================================
+# Usage Examples
+# ====================================
+
+# Switch providers on the fly:
+# sheri-ml -c model_provider="gemini" "task"
+# sheri-ml -c model_provider="anthropic" -m claude-opus-4.6 "task"
+# sheri-ml --oss --local-provider ollama "task"
+
+# Multi-provider CTO mode (future):
+# sheri-ml cto --build-monitor --github-repo "Hey-Salad/myproject" "implement feature X"

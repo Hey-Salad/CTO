@@ -1,0 +1,17 @@
+name = "heysalad-sheri-auth"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+workers_dev = true
+
+[env.production]
+name = "heysalad-sheri-auth"
+route = { pattern = "sheri-auth.heysalad.app/*", zone_name = "heysalad.app" }
+
+[[d1_databases]]
+binding = "DB"
+database_name = "heysalad-rag-db"
+database_id = "832bcc2a-8294-4c61-a074-41bd6312c305"
+
+[vars]
+ENVIRONMENT = "production"
+TOKEN_EXPIRY_DAYS = "90"
