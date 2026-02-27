@@ -71,5 +71,8 @@ If your team wants business implementation support (deployment, integration, man
 
 [![GitHub stars](https://img.shields.io/github/stars/Hey-Salad/CTO?style=for-the-badge)](https://github.com/Hey-Salad/CTO/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/Hey-Salad/CTO?style=for-the-badge)](https://github.com/Hey-Salad/CTO/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/Hey-Salad/CTO?style=for-the-badge)](https://github.com/Hey-Salad/CTO/issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/Hey-Salad/CTO?style=for-the-badge)](https://github.com/Hey-Salad/CTO/pulls)
+[![GitHub repo size](https://img.shields.io/github/repo-size/Hey-Salad/CTO?style=for-the-badge)](https://github.com/Hey-Salad/CTO)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Hey-Salad/CTO&type=Date)](https://star-history.com/#Hey-Salad/CTO&Date)
