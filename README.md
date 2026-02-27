@@ -75,7 +75,7 @@ If your team wants business implementation support (deployment, integration, man
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/Hey-Salad/CTO?style=for-the-badge)](https://github.com/Hey-Salad/CTO/pulls)
 [![GitHub repo size](https://img.shields.io/github/repo-size/Hey-Salad/CTO?style=for-the-badge)](https://github.com/Hey-Salad/CTO)
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Hey-Salad/CTO&type=Date)](https://star-history.com/#Hey-Salad/CTO&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Hey-Salad%2FCTO&type=Date)](https://star-history.com/#Hey-Salad/CTO&Date)
 
 ## Release and PR Process
 
