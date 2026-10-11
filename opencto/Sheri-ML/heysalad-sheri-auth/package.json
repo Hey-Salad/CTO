@@ -1,6 +1,7 @@
 {
   "name": "heysalad-sheri-auth",
   "version": "1.0.0",
+  "license": "AGPL-3.0-only",
   "description": "HeySalad Sheri ML Authentication Service",
   "main": "src/index.ts",
   "scripts": {

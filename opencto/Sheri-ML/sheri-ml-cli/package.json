@@ -39,7 +39,7 @@
     "raspberry-pi"
   ],
   "author": "HeySalad Inc. <hello@heysalad.io>",
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "repository": {
     "type": "git",
     "url": "https://github.com/Hey-Salad/ai.git",

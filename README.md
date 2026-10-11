@@ -98,3 +98,9 @@ git push origin v1.0.0
 - Platform spec: [docs/opencto/OPENCTO_PLATFORM_SPEC.md](docs/opencto/OPENCTO_PLATFORM_SPEC.md)
 - Frontend, brand and monetisation spec: [docs/opencto/OPENCTO_FRONTEND_BRAND_MONETISATION_SPEC.md](docs/opencto/OPENCTO_FRONTEND_BRAND_MONETISATION_SPEC.md)
 - Implementation roadmap: [docs/opencto/IMPLEMENTATION_ROADMAP.md](docs/opencto/IMPLEMENTATION_ROADMAP.md)
+
+## License
+
+Copyright (C) 2026 HeySalad Inc.
+
+Licensed under the GNU Affero General Public License v3.0 only (AGPL-3.0-only). See [LICENSE](LICENSE) and [NOTICE](NOTICE). If you run a modified version of this software to provide a network service, the AGPL requires you to offer its users the corresponding source code. Versions published before this change remain under their previous licence.

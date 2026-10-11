@@ -1,3 +1,26 @@
+CTO
+Copyright (C) 2026 HeySalad Inc.
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, version 3 only (AGPL-3.0-only). See the LICENSE
+file for the full licence text.
+
+Previous licence
+----------------
+Versions of this software published before the commit that introduced this
+NOTICE were made available under the Apache License 2.0. Those earlier versions remain
+available under their previous licence. The AGPL-3.0-only terms apply from
+this commit onward.
+
+Third-party components
+----------------------
+sheri-ml/ contains a snapshot of openai/codex, which remains under the Apache License 2.0.
+Its own licence and notice files are retained and are not affected by this
+relicensing.
+
+Original NOTICE
+---------------
 Copyright (c) 2026 HeySalad Inc.
 
 This product includes software developed by HeySalad Inc.
