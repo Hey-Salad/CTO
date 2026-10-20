@@ -200,7 +200,7 @@ curl https://sheri-auth.heysalad.app/auth/me \
 
 Tokens use the format: `hsa_<32-hex-chars>`
 
-Example: `hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e`
+Example: `<redacted api-key …4d1e>`
 
 - Prefix: `hsa_` (HeySalad Auth)
 - Length: 36 characters total

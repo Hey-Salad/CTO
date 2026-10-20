@@ -772,7 +772,7 @@ func GetAuthMethod() string {
 hsa_<32 random hex chars>
 
 Examples:
-hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e
+<redacted api-key …4d1e>
 hsa_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
 
 Prefix "hsa" = HeySalad API

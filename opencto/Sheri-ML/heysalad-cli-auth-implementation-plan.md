@@ -20,7 +20,7 @@ Based on comprehensive research of 15+ modern CLI tools, here's what we're build
 2. Encrypted config file `~/.config/heysalad/config.yml` (600 permissions)
 3. Environment variable (ephemeral, per-session)
 
-**Token Format:** `hsa_<32-hex-chars>` (e.g., `hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e`)
+**Token Format:** `hsa_<32-hex-chars>` (e.g., `<redacted api-key …4d1e>`)
 
 ---
 
@@ -227,7 +227,7 @@ Content-Type: application/json
 
 Response 200 (when authorized):
 {
-  "access_token": "hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e",
+  "access_token": "<redacted api-key …4d1e>",
   "token_type": "Bearer",
   "expires_in": 7776000,  // 90 days
   "refresh_token": "hsr_...",
@@ -384,7 +384,7 @@ UI:
 ```
 hsa_<32 hex chars>
 
-Example: hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e
+Example: <redacted api-key …4d1e>
 
 Prefix: "hsa" = HeySalad API
 Length: 36 chars (hsa_ + 32)
@@ -395,7 +395,7 @@ Entropy: 128 bits
 ```
 hsr_<32 hex chars>
 
-Example: hsr_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
+Example: <redacted api-key …c5d6>
 
 Prefix: "hsr" = HeySalad Refresh
 ```
@@ -416,7 +416,7 @@ func GenerateToken(prefix string) (string, error) {
 }
 
 // Generate access token
-token, _ := GenerateToken("hsa")  // hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e
+token, _ := GenerateToken("hsa")  // <redacted api-key …4d1e>
 ```
 
 ### 4.2 Token Storage Security
@@ -447,8 +447,8 @@ CREATE INDEX idx_tokens_hash ON tokens(token_hash) WHERE revoked_at IS NULL;
 # ~/.config/heysalad/config.yml (600 permissions)
 version: 1
 auth:
-  token: hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e
-  refresh_token: hsr_a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
+  token: <redacted api-key …4d1e>
+  refresh_token: <redacted api-key …c5d6>
   expires_at: "2026-05-22T10:30:00Z"
   user:
     email: user@example.com
@@ -724,7 +724,7 @@ heysalad auth token     # Show full token (for debugging)
 
 **Output:**
 ```
-hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e
+<redacted api-key …4d1e>
 
 ⚠️  Warning: Keep this token secret!
     Anyone with this token can access your HeySalad account.
@@ -870,7 +870,7 @@ Error: Invalid token format
 HeySalad API tokens should:
   - Start with "hsa_"
   - Be 36 characters long
-  - Example: hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e
+  - Example: <redacted api-key …4d1e>
 
 Generate a valid token at:
   https://heysalad.app/settings/tokens
@@ -886,7 +886,7 @@ Generate a valid token at:
 ```go
 func TestTokenStore_SaveAndLoad(t *testing.T) {
     store := NewTokenStore()
-    token := "hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e"
+    token := "<redacted api-key …4d1e>"
 
     // Save
     err := store.Save(token)
@@ -918,7 +918,7 @@ func TestToken_IsValid(t *testing.T) {
         {
             name: "valid token",
             token: Token{
-                AccessToken: "hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e",
+                AccessToken: "<redacted api-key …4d1e>",
                 ExpiresAt:   time.Now().Add(24 * time.Hour),
             },
             expected: true,
@@ -926,7 +926,7 @@ func TestToken_IsValid(t *testing.T) {
         {
             name: "expired token",
             token: Token{
-                AccessToken: "hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e",
+                AccessToken: "<redacted api-key …4d1e>",
                 ExpiresAt:   time.Now().Add(-24 * time.Hour),
             },
             expected: false,
@@ -977,7 +977,7 @@ func TestDeviceFlow_Complete(t *testing.T) {
 **Environment Variable Auth:**
 ```go
 func TestAuth_EnvironmentVariable(t *testing.T) {
-    token := "hsa_7f3d2e1a9c4b8e6f0d5a7c3e9b2f4d1e"
+    token := "<redacted api-key …4d1e>"
     os.Setenv("HEYSALAD_API_KEY", token)
     defer os.Unsetenv("HEYSALAD_API_KEY")
 
