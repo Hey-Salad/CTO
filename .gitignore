@@ -60,3 +60,13 @@ Thumbs.db
 .env
 .env.*
 \!.env.example
+!.env.example
+*.key
+*.p12
+*.pem
+google-credentials.json
+*service-account*.json
+*credentials*.json
+*credentials*.json.backup
+.npmrc
+.venv/
