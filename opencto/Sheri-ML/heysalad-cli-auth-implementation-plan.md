@@ -918,7 +918,7 @@ func TestToken_IsValid(t *testing.T) {
         {
             name: "valid token",
             token: Token{
-                AccessToken: "<redacted api-key …4d1e>",
+                AccessToken: "hsa_00000000000000000000000000000000",
                 ExpiresAt:   time.Now().Add(24 * time.Hour),
             },
             expected: true,
@@ -926,7 +926,7 @@ func TestToken_IsValid(t *testing.T) {
         {
             name: "expired token",
             token: Token{
-                AccessToken: "<redacted api-key …4d1e>",
+                AccessToken: "hsa_00000000000000000000000000000000",
                 ExpiresAt:   time.Now().Add(-24 * time.Hour),
             },
             expected: false,

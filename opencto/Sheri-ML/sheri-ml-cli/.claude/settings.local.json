@@ -44,10 +44,6 @@
       "Bash(grep 8976:*)",
       "Bash(env:*)",
       "Bash(gh help:*)",
-      "Bash(export CLOUDFLARE_API_TOKEN=<redacted cloudflare-api-key …4TpW> && wrangler d1 create sheri-auth-db 2>&1)",
-      "Bash(export CLOUDFLARE_API_TOKEN=<redacted cloudflare-api-key …4TpW> && wrangler d1 list 2>&1)",
-      "Bash(export CLOUDFLARE_API_TOKEN=<redacted cloudflare-api-key …4TpW> && wrangler d1 execute heysalad-rag-db --file=schema.sql --remote 2>&1)",
-      "Bash(export CLOUDFLARE_API_TOKEN=<redacted cloudflare-api-key …4TpW> && wrangler deploy 2>&1)",
       "Bash(export:*)",
       "Bash(openssl rand:*)",
       "Bash(grep:*)"

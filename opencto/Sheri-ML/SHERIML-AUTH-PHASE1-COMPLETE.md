@@ -363,7 +363,8 @@ cd /home/peter/heysalad-sheri-auth
 npm install
 
 # Deploy to Cloudflare
-export CLOUDFLARE_API_TOKEN=<redacted cloudflare-api-key …4TpW>
+# Prompted, so the token never lands in this doc or in shell history.
+read -rs -p "Cloudflare API token: " CLOUDFLARE_API_TOKEN && export CLOUDFLARE_API_TOKEN
 wrangler deploy
 
 # Set secret
